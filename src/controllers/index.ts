@@ -39,7 +39,6 @@ export const chatController = async (c: Context) => {
   try {
     const responseStream = await makeRequest(openai, question, role);
 
-    // Convert async iterator into a ReadableStream (Web Streams API)
     const stream = new ReadableStream({
       async start(controller) {
         const encoder = new TextEncoder();
@@ -47,9 +46,11 @@ export const chatController = async (c: Context) => {
           for await (const chunk of responseStream) {
             const text = chunk.choices[0]?.delta?.content || "";
             if (text) {
-              controller.enqueue(encoder.encode(text));
+              // SSE format: must end with \n\n
+              controller.enqueue(encoder.encode(`data: ${text}\n\n`));
             }
           }
+          controller.enqueue(encoder.encode("data: [DONE]\n\n"));
         } catch (err) {
           controller.error(err);
         } finally {
@@ -60,8 +61,9 @@ export const chatController = async (c: Context) => {
 
     return new Response(stream, {
       headers: {
-        "Content-Type": "text/plain; charset=utf-8",
-        "Cache-Control": "no-cache",
+        "Content-Type": "text/event-stream; charset=utf-8",
+        "Cache-Control": "no-cache, no-transform",
+        Connection: "keep-alive",
         "Transfer-Encoding": "chunked",
       },
     });
