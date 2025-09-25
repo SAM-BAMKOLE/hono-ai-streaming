@@ -1,0 +1,262 @@
+:root {
+  --primary-bg: #ffebcd;
+  --primary-text: rgb(7, 4, 4);
+  --secondary-bg: #fff;
+  --accent-color: #0d49a3;
+  --border-color: #ddd;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --input-bg: #fff;
+  --response-bg: #f9f9f9;
+  --response-color: #888;
+  --response-header-color: #313131;
+}
+
+.dark-mode {
+  --primary-bg: #1a1a1a;
+  --primary-text: #f0f0f0;
+  --secondary-bg: #2d2d2d;
+  --accent-color: #0084ff;
+  --border-color: #444;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --input-bg: #3d3d3d;
+  --response-bg: #333;
+  --response-color: #9b9b9b;
+  --response-header-color: #c5c5c5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--primary-text);
+}
+
+.description {
+  margin-bottom: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.chat-form {
+  background-color: var(--secondary-bg);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+#questionId {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 16px;
+  resize: vertical;
+  min-height: 120px;
+  background-color: var(--input-bg);
+  color: var(--primary-text);
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+select {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: var(--input-bg);
+  color: var(--primary-text);
+}
+
+#responseBtn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+#responseBtn:hover {
+  opacity: 0.9;
+}
+
+#responseBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.response-container {
+  background-color: var(--response-bg);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+  min-height: 200px;
+}
+
+.response-placeholder {
+  color: #888;
+  text-align: center;
+  font-style: italic;
+}
+
+.beware-section {
+  background-color: var(--secondary-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid #e74c3c;
+}
+
+.beware-title {
+  color: #e74c3c;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  border-top: 1px solid var(--border-color);
+  font-size: 14px;
+  color: #777;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+
+#response {
+  line-height: 1.4;
+  list-style-position: inside;
+
+  h4:not(:first-child),
+  h3:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  h3,
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  h3,
+  h4,
+  strong {
+    font-weight: 600;
+    color: var(--response-header-color);
+  }
+
+  p,
+  ul,
+  span,
+  div {
+    color: var(--response-color);
+  }
+
+  li p {
+    display: inline;
+    font-size: 1.1rem;
+  }
+  li::marker {
+    color: var(--response-header-color);
+  }
+
+  li ul,
+  li ol {
+    margin-left: 0.5rem;
+  }
+}

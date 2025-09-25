@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --radius: 0.4rem;
+}
+
+body {
+  background-color: rgb(7, 4, 4);
+  color: blanchedalmond;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+}
+
+main {
+  max-width: 40rem;
+  padding: 1rem 0;
+}
+
+h1 {
+  margin-bottom: 0.3rem;
+}
+
+.form {
+  margin-top: 0.5rem;
+}
+
+.form-field {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 235, 205, 0.13);
+  color: blanchedalmond;
+  padding: 0.7rem 0.7rem;
+  border-radius: var(--radius);
+}
+
+input:focus,
+select:focus {
+  outline: 1px solid hsla(36, 100%, 90%, 0.24);
+  outline-offset: 0.1rem;
+}
+
+option {
+  color: rgb(7, 4, 4);
+}
+
+button {
+  padding: 0.7rem 0.7rem;
+  border-radius: var(--radius);
+  background-color: wheat;
+  color: rgb(7, 4, 4);
+  font-weight: 600;
+  border: none;
+  margin-top: 0.4rem;
+}
+
+#response {
+  margin-top: 1.2rem;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsla(36, 100%, 90%, 0.24);
+  background-color: rgba(250, 235, 215, 0.014);
+  visibility: hidden;
+  line-height: 1.4;
+  font-weight: 300;
+  list-style-position: inside;
+
+  h4:not(:first-child) {
+    margin-top: 1rem;
+  }
+  h4,
+  strong {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: blanchedalmond;
+  }
+  p,
+  ul,
+  span,
+  div {
+    color: #ffebcd94;
+  }
+
+  li p {
+    display: inline;
+  }
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+button:disabled {
+  background-color: rgb(129, 128, 126);
+}
+
+.beware-text {
+  margin-top: 1.2rem;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsla(6, 20%, 50%, 0.24);
+  background-color: rgba(255, 0, 0, 0.014);
+  color: hsl(6, 20%, 50%);
+  line-height: 1.4;
+  font-weight: 300;
+}
+.beware-text b {
+  font-weight: 600;
+}

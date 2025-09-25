@@ -1,0 +1,22 @@
+{
+  "name": "Hono-chat-streaming",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.2",
+    "dotenv": "^17.2.2",
+    "github-markdown-css": "^5.8.1",
+    "hono": "^4.9.7",
+    "marked": "^16.3.0",
+    "openai": "^5.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
+  }
+}
