@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import type { Context } from "hono";
 import { validator } from "hono/validator";
-import { chatController } from "../controllers/index.ts";
+import { chatController } from "../controllers/index.js";
 
 export const router = new Hono();
 

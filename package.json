@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.19.2",
+    "Hono-chat-streaming": "link:",
     "dotenv": "^17.2.2",
     "github-markdown-css": "^5.8.1",
     "hono": "^4.9.7",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
+    "ts-node": "^10.9.2",
     "tsx": "^4.7.1",
     "typescript": "^5.8.3"
   }
