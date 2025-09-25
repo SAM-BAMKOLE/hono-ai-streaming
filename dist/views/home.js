@@ -1,0 +1,7 @@
+import { jsx as _jsx, jsxs as _jsxs } from "hono/jsx/jsx-runtime";
+import { useState } from "hono/jsx";
+import { hc } from "hono/client";
+const Home = () => {
+    return (_jsxs("main", { children: [_jsx("h1", { children: "Welcome to Let's Chat!" }), _jsx("p", { children: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam doloremque unde eum facere!" }), _jsxs("form", { class: "form", children: [_jsxs("div", { className: "form-field", children: [_jsx("label", { htmlFor: "questionInput", children: "Type your question here!" }), _jsx("input", { type: "text", id: "questionInput", placeholder: "Why are the skies blue?" })] }), _jsxs("div", { className: "form-field", children: [_jsx("label", { htmlFor: "selectInput", children: "Sound like a.." }), _jsxs("select", { name: "", id: "selectInput", children: [_jsx("option", { value: "user", selected: true, children: "A Regular Person" }), _jsx("option", { value: "assistant", children: "My Assistant" }), _jsx("option", { value: "developer", children: "A Tech Bro" }), _jsx("option", { value: "system", children: "A Computer" })] })] }), _jsx("button", { id: "submitBtn", children: "Ask Question" })] }), _jsx("div", { id: "response" }), _jsxs("div", { className: "beware-text", children: [_jsx("b", { children: "Beware:" }), " This is a demo application. Please do not use any sensitive information. Also, AI can give false content"] })] }));
+};
+export default Home;

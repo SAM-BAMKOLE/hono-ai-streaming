@@ -6,9 +6,7 @@ import { html } from "hono/html";
 import Home from "./views/home.js";
 import { serveStatic } from "@hono/node-server/serve-static";
 import Index from "./views/index.js";
-
 const app = new Hono();
-
 app.use("*", logger());
 app.use("*", serveStatic({ root: "./src/static" }));
 /*
@@ -40,7 +38,7 @@ app.get("/", (c) => {
 });
 */
 app.get("/", (c) => {
-  const template = html`
+    const template = html `
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -85,17 +83,12 @@ app.get("/", (c) => {
       </body>
     </html>
   `;
-  return c.html(template);
+    return c.html(template);
 });
-
 app.route("api/", router);
-
-serve(
-  {
+serve({
     fetch: app.fetch,
     port: 3000,
-  },
-  (info) => {
+}, (info) => {
     console.log(`Server is running on http://localhost:${info.port}`);
-  }
-);
+});
