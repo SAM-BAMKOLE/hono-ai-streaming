@@ -54,7 +54,8 @@ export const chatController = async (c: Context) => {
   }
 };
 
-async function makeRequest(openai: OpenAI, question: string, role: Role) {
+// @ts-ignore
+async function makeRequest(openai, question: string, role: Role) {
   const maxRetries = 5;
   let retryCount = 0;
   let waitTime = 1000;
