@@ -3,6 +3,7 @@ import { env } from "hono/adapter";
 import OpenAI from "openai";
 import { streamText } from "hono/streaming";
 import type { Context } from "hono";
+import type OpenAIType from "openai";
 
 interface IEnvVars {
   OPENROUTER_API_KEY: string;
@@ -30,7 +31,7 @@ export const chatController = async (c: Context) => {
     role: Role;
   }>();
   const { OPENROUTER_API_KEY } = env<IEnvVars>(c);
-  const openai = new OpenAI({
+  const openai: OpenAIType = new OpenAI({
     baseURL: "https://openrouter.ai/api/v1",
     apiKey: process.env.OPENROUTER_API_KEY,
     //   defaultHeaders: {

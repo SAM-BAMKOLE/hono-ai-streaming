@@ -1,6 +1,6 @@
 import { useState } from "hono/jsx";
 import { hc } from "hono/client";
-import type { AppType } from "../routes/index.ts";
+import type { AppType } from "../routes/index.js";
 
 const Home = () => {
   return (
