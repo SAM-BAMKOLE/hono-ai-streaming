@@ -67,8 +67,8 @@ export default function Index() {
 
       <footer>
         <p>
-          AI Chat Assistant &copy; 2023 | All interactions are anonymous and not
-          stored
+          AI Chat Assistant &copy; {new Date().getFullYear()} | All interactions
+          are anonymous and not stored
         </p>
       </footer>
     </>
