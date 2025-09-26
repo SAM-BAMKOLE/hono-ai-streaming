@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import type { Context } from "hono";
 import { validator } from "hono/validator";
-// import { chatController } from "../controllers/index.js";
+import { chatController } from "../controllers/index.js";
 
 export const router = new Hono();
 
@@ -38,6 +38,6 @@ function validate(value: any, c: Context) {
   return { role, question };
 }
 
-// router.post("chat", validator("json", validate), chatController);
+router.post("chat", validator("json", validate), chatController);
 
 export type AppType = typeof router;

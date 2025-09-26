@@ -1,10 +1,9 @@
-import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 import { logger } from "hono/logger";
 import { router } from "./routes/index.js";
 import { html } from "hono/html";
 import Home from "./views/home.js";
-import { serveStatic } from "@hono/node-server/serve-static";
+import { serveStatic } from "hono/bun";
 import Index from "./views/index.js";
 
 const app = new Hono();
@@ -90,12 +89,17 @@ app.get("/", (c) => {
 
 app.route("api/", router);
 
-serve(
-  {
-    fetch: app.fetch,
-    port: 3000,
-  },
-  (info) => {
-    console.log(`Server is running on http://localhost:${info.port}`);
-  }
-);
+// serve(
+//   {
+//     fetch: app.fetch,
+//     port: 3000,
+//   },
+//   (info) => {
+//     console.log(`Server is running on http://localhost:${info.port}`);
+//   }
+// );
+export default {
+  fetch: app.fetch,
+  port: 3000,
+  hostname: "0.0.0.0", // 👈 important
+};
