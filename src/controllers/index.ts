@@ -72,7 +72,7 @@ async function makeRequest(openai, question: string, role: Role) {
             ? {
                 role: "tool",
                 content: question,
-                tool_call_id: role, // Replace with actual tool_call_id if available
+                tool_call_id: role,
               }
             : {
                 role: role,
